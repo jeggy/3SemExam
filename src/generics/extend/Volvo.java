@@ -1,7 +1,7 @@
 package generics.extend;
 
 /**
- * Created by jeggy on 12/20/15.
+ * Created by Jógvan 20/12-2015 14:32.
  */
 public class Volvo extends Vehicle {
     public Volvo(String s) {

@@ -3,7 +3,7 @@ package generics;
 import java.util.Arrays;
 
 /**
- * Created by jeggy on 12/19/15.
+ * Created by Jógvan 20/12-2015 12:15.
  */
 public class MyList<T> {
 
