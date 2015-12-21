@@ -7,5 +7,7 @@ public interface Drivable extends Runnable{
 
     void startDriving();
     void stopDriving();
+    @Override
+    void run();
 
 }
