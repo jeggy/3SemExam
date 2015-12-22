@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 /**
  * Created by jeggy on 9/11/15.
  */
-public class Stuff{
+public class FXTools{
 
     // Example usage: startFXApplication("opgaver.others.calculator.Main");
     public static void startFXApplication(String className) {
