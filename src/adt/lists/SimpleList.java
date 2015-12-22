@@ -1,4 +1,4 @@
-package adt.list;
+package adt.lists;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package adt.list;
+package adt.lists;
 
 /**
  * Created by Jógvan 21/12-2015 13:59.

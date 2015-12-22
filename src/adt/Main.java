@@ -1,7 +1,6 @@
 package adt;
 
-import adt.list.GenericList;
-import adt.list.SimpleList;
+import adt.lists.GenericList;
 
 import java.util.Iterator;
 

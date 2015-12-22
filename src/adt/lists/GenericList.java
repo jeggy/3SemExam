@@ -1,4 +1,4 @@
-package adt.list;
+package adt.lists;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -47,7 +47,7 @@ public class GenericList<T> implements Collection<T> {
     }
 
     public Iterator<T> iterator(){
-        return new adt.list.Iterator<>(list, size);
+        return new adt.lists.Iterator<>(list, size);
     }
 
     private void grow() {

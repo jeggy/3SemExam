@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 /**
  * Created by jeggy on 9/11/15.
  */
-public class Stuff extends Thread {
+public class Stuff{
 
     // Example usage: startFXApplication("opgaver.others.calculator.Main");
     public static void startFXApplication(String className) {
@@ -23,11 +23,8 @@ public class Stuff extends Thread {
             System.out.println(className+" not found.");
         } catch (NoSuchMethodException e) {
             System.out.println(className+" doesn't have a start method.");
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
-
     }
 }
