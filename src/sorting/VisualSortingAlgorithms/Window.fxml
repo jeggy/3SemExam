@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ** minWidth="680" minHeight="420" -->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane minHeight="420" minWidth="680" prefHeight="484.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sorting.VisualSortingAlgorithms.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Run">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Edit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
+          <ColumnConstraints hgrow="NEVER" maxWidth="186" minWidth="186.0" prefWidth="186.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <BarChart fx:id="chart" barGap="0.0" categoryGap="1.0" title="Visual Algorithm Sorter">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <VBox minWidth="186.0" prefHeight="516.0" prefWidth="186.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="Options:">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <RadioButton fx:id="insertionRadio" mnemonicParsing="false" selected="true" text="InsertionSort">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sortingAlgorithm" />
+                     </toggleGroup>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton fx:id="bubbleRadio" mnemonicParsing="false" text="BubbleSort" toggleGroup="$sortingAlgorithm">
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton fx:id="mergeRadio" mnemonicParsing="false" text="MergeSort" toggleGroup="$sortingAlgorithm">
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton fx:id="radixRadio" mnemonicParsing="false" text="RadixSort" toggleGroup="$sortingAlgorithm">
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </RadioButton>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="49.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="127.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Items:" />
+                        <Label text="Max:" GridPane.rowIndex="1" />
+                        <TextField fx:id="itemsField" promptText="Number of items" GridPane.columnIndex="1" />
+                        <TextField fx:id="maxField" promptText="Max number" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="waitField" promptText="Wait time" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Wait:" GridPane.rowIndex="2" />
+                        <Button fx:id="generateButton" mnemonicParsing="false" onAction="#generateBtnPressed" text="Generate Numbers" GridPane.columnSpan="2147483647" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="startButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#startBtnPressed" text="Start" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES" />
+                        <Button fx:id="pauseButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#pauseBtnPressed" text="Pause" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES" />
+                        <Button fx:id="stopButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#stopBtnPressed" text="Stop" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES" />
+                     </children>
+                     <padding>
+                        <Insets bottom="25.0" top="25.0" />
+                     </padding>
+                  </GridPane>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="97.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="10.0" prefWidth="79.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="List accessed:" />
+                        <Label text="List set:" GridPane.rowIndex="1" />
+                        <Label fx:id="listAccessedLabel" text="0" GridPane.columnIndex="1" />
+                        <Label fx:id="listSetLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

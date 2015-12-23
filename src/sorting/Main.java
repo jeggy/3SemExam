@@ -11,8 +11,8 @@ import java.util.Arrays;
  */
 public class Main {
 
-    public static final int SIZE = 150;
-    public static final int MAX_NUMBER = 1250;
+    public static final int SIZE = 5000;
+    public static final int MAX_NUMBER = 10000;
 
     public static final boolean PRINT_NUMBERS = true;
 
@@ -23,14 +23,14 @@ public class Main {
         }
 
 
-        SortInterface sort = new RadixSort(b1);
+        SortInterface sorter = new RadixSort(b1);
 
-        if(PRINT_NUMBERS)System.out.println(sort.getName()+": " + Arrays.toString(b1));
+        if(PRINT_NUMBERS)System.out.println(sorter.getName()+": " + Arrays.toString(b1));
         long start = System.nanoTime();
-        sort.sort();
+        sorter.sort();
         long end = System.nanoTime();
-        if(PRINT_NUMBERS)System.out.println(sort.getName()+": "+Arrays.toString(b1));
-        System.out.println(sort.getName()+" Time(nano): "+(end-start));
+        if(PRINT_NUMBERS)System.out.println(sorter.getName()+": "+Arrays.toString(b1));
+        System.out.println(sorter.getName()+" Time(nano): "+(end-start));
 
 
 
