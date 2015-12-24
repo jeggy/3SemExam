@@ -28,20 +28,20 @@ public class LinkedStack<T> {
         return this.size;
     }
 
+    public void printAll(){
+        Node tmp = this.head;
+        while(tmp!=null){
+            System.out.print(", "+tmp.data);
+            tmp = tmp.next;
+        }
+    }
+
     private static class Node<T>{
         Node<T> next;
         T data;
         Node(T data, Node<T> next) {
             this.data = data;
             this.next = next;
-        }
-    }
-
-    public void printAll(){
-        Node tmp = this.head;
-        while(tmp!=null){
-            System.out.print(", "+tmp.data);
-            tmp = tmp.next;
         }
     }
 }

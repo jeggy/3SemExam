@@ -1,9 +1,8 @@
 package adt;
 
-import adt.lists.GenericList;
-import adt.lists.LinkedStack;
+import adt.lists.HashSet;
 
-import java.util.Iterator;
+import java.util.Arrays;
 
 /**
  * Created by Jógvan 20/12-2015 15:53.
@@ -44,5 +43,21 @@ public class Main {
 //        l.pop();
 //        l.pop();
 //        System.out.println(l.pop());
+
+        HashSet<String> set = new HashSet<>();
+        set.add("Hello1");
+        set.add("Hellfweao2");
+        set.add("Hellfao3");
+        set.add("Hfe2lo%4");
+
+        System.out.println(Arrays.toString(set.toArray()));
+
+
+//        LinkedList<String> ll = new LinkedList<>();
+//        ll.add("Hello");
+//        ll.add("Hello2");
+//        ll.add("Hello3");
+//        System.out.println(ll.get(0));
+
     }
 }
