@@ -39,6 +39,16 @@ public class LinkedList<T> {
         this.size++;
     }
 
+    public void set(T item, int index){
+        if(index>this.size)
+            throw new IndexOutOfBoundsException("List is '"+this.size+"' you are trying to set at '"+index+"'");
+        Node<T> tmp = this.head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        tmp.data = item;
+    }
+
     private Node<T> find(int index){
         Node<T> curr = this.head;
         for (int i = 0; i <index ; i++) {
@@ -63,7 +73,7 @@ public class LinkedList<T> {
     /* ********** Node ********** */
     private static class Node<T>{
         T data;
-        Node next;
+        Node<T> next;
 
         Node(T data) {
             this.data = data;

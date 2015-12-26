@@ -1,5 +1,6 @@
 package adt;
 
+import adt.lists.HashMap;
 import adt.lists.HashSet;
 
 import java.util.Arrays;
@@ -43,21 +44,40 @@ public class Main {
 //        l.pop();
 //        l.pop();
 //        System.out.println(l.pop());
-
-        HashSet<String> set = new HashSet<>();
-        set.add("Hello1");
-        set.add("Hellfweao2");
-        set.add("Hellfao3");
-        set.add("Hfe2lo%4");
-
-        System.out.println(Arrays.toString(set.toArray()));
-
-
+//
+//        HashSet<String> set = new HashSet<>();
+//        set.add("Hello1");
+//        set.add("Hellfweao2");
+//        set.add("Hellfao3");
+//        set.add("Hellfao3");
+//        set.add("Hfe2lo%4");
+//
+//        System.out.println(Arrays.toString(set.toArray()));
+//
+//
 //        LinkedList<String> ll = new LinkedList<>();
 //        ll.add("Hello");
 //        ll.add("Hello2");
 //        ll.add("Hello3");
 //        System.out.println(ll.get(0));
 
+        HashMap<String, String> test = new HashMap<>();
+        test.put("","");
+        test.put("1","a");
+        test.put("2","b");
+        test.put("3","c");
+        test.put("33","c");
+        test.put("34","bc");
+        test.put("35","cd");
+        test.put("311","ce");
+        test.put("A","");
+        test.put("A1","a");
+        test.put("AA2","b");
+        test.put("A3","c");
+        test.put("A33","c");
+        test.put("A34","bc");
+        test.put("A35","cd");
+        test.put("A311","ce");
+        System.out.println(test.get("A35"));
     }
 }
