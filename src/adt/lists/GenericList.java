@@ -2,11 +2,13 @@ package adt.lists;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 /**
  * Created by Jógvan 21/12-2015 13:26.
  */
-public class GenericList<T> implements Collection<T> {
+public class GenericList<T> implements Collection<T>, Iterable<T>, Iterator<T> {
 
     private T[] list = (T[]) new Object[20];
     private int size = 0;
@@ -30,6 +32,16 @@ public class GenericList<T> implements Collection<T> {
         if(this.size<index)
             throw new IndexOutOfBoundsException("The list is only "+this.size+" in size!");
         this.list[--this.size] = null;
+    }
+
+    public void remove(T obj){
+        for (int i = 0; i < this.size; i++) {
+            if(this.list[i].equals(obj)){
+                this.list[i] = null;
+                this.size--;
+                return;
+            }
+        }
     }
 
     @Override
@@ -56,5 +68,18 @@ public class GenericList<T> implements Collection<T> {
             newList[i] = this.list[i];
         }
         this.list = newList;
+    }
+
+    /* Iterator, Iterable */
+    private int ic = 0;
+
+    @Override
+    public boolean hasNext() {
+        return this.list[ic+1] != null;
+    }
+
+    @Override
+    public T next() {
+        return this.list[ic++];
     }
 }

@@ -5,7 +5,7 @@ package adt.lists;
  */
 public class HashMap<K, V> {
 
-    private LinkedList<Entry<K,V>>[] map = new LinkedList[11];
+    private LinkedList<Entry<K,V>>[] map = new LinkedList[101];
     private int size = 0;
 
     /**

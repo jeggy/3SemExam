@@ -1,7 +1,5 @@
 package patterns.observer;
 
-import java.util.ArrayList;
-
 /**
  * Created by Jógvan 21/12-2015 19:07.
  */
