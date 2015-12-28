@@ -1,14 +1,12 @@
-package adt.lists;
+package adt.collections;
 
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 /**
  * Created by Jógvan 21/12-2015 13:26.
  */
-public class GenericList<T> implements Collection<T>, Iterable<T>, Iterator<T> {
+public class GenericList<T> implements List<T>, Iterable<T>, Iterator<T> {
 
     private T[] list = (T[]) new Object[20];
     private int size = 0;
@@ -22,7 +20,7 @@ public class GenericList<T> implements Collection<T>, Iterable<T>, Iterator<T> {
 
     @Override
     public T get(int index) {
-        if(this.list.length<index)
+        if(this.size<index)
             throw new IndexOutOfBoundsException("The list is only "+this.size+" in size!");
         return this.list[index];
     }
@@ -50,6 +48,15 @@ public class GenericList<T> implements Collection<T>, Iterable<T>, Iterator<T> {
     }
 
     @Override
+    public boolean contains(T o) {
+        for (T t : list) {
+            if(o.equals(t))
+                return true;
+        }
+        return false;
+    }
+
+    @Override
     public String toString() {
         T[] r = (T[]) new Object[this.size];
         for (int i = 0; i < this.size; i++) {
@@ -59,7 +66,7 @@ public class GenericList<T> implements Collection<T>, Iterable<T>, Iterator<T> {
     }
 
     public Iterator<T> iterator(){
-        return new adt.lists.Iterator<>(list, size);
+        return new ListIterator<>(list);
     }
 
     private void grow() {

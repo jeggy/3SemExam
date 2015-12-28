@@ -1,11 +1,11 @@
-package adt.lists;
+package adt.collections;
 
 import java.util.Arrays;
 
 /**
  * Created by Jógvan 20/12-2015 16:09.
  */
-public class SimpleList<T> implements Collection<T> {
+public class SimpleList<T> implements List<T> {
 
     private T[] list;
 
@@ -38,6 +38,12 @@ public class SimpleList<T> implements Collection<T> {
     @Override
     public int size() {
         return this.size;
+    }
+
+    @Override
+    public boolean contains(T o) {
+        // TODO: implement this.
+        return false;
     }
 
     @Override

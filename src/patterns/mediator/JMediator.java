@@ -1,6 +1,6 @@
 package patterns.mediator;
 
-import adt.lists.GenericList;
+import adt.collections.GenericList;
 
 /**
  * Created by Jógvan 26/12-2015 02:27.

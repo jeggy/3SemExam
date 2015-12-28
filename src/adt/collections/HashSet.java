@@ -1,9 +1,9 @@
-package adt.lists;
+package adt.collections;
 
 /**
  * Created by Jógvan 23/12-2015 15:11.
  */
-public class HashSet<T> {
+public class HashSet<T> implements Collection<T>{
     private LinkedList<T>[] set = new LinkedList[101];
     private int size = 0;
 
@@ -31,8 +31,26 @@ public class HashSet<T> {
         return n;
     }
 
+    @Override
+    public boolean contains(T o) {
+        int pos = hash(o)%this.set.length;
+        if(this.set[pos]==null){
+            return false;
+        }else{
+            for (int i = 0; i < this.set[pos].size(); i++)
+                if(hash(o)==hash(this.set[pos].get(i)))
+                    return true;
+        }
+        return false;
+    }
+
     private int hash(T o) {
         int h = o.hashCode();
         return h<0 ? -h : h;
+    }
+
+    @Override
+    public int size() {
+        return 0;
     }
 }

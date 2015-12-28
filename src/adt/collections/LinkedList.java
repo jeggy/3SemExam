@@ -1,9 +1,9 @@
-package adt.lists;
+package adt.collections;
 
 /**
  * Created by Jógvan 23/12-2015 15:52.
  */
-public class LinkedList<T> {
+public class LinkedList<T> implements List<T>{
 
     private Node<T> head;
     private Node<T> tail;
@@ -65,8 +65,24 @@ public class LinkedList<T> {
         }
     }
 
+    @Override
+    public boolean contains(T o) {
+        Node<T> tmp = head;
+        while(tmp!=null){
+            if(tmp.data.equals(o)) return true;
+            tmp = tmp.next;
+        }
+        return false;
+    }
+
     public int size() {
         return size;
+    }
+
+    // TODO: Implement method!
+    @Override
+    public void remove(int index) {
+
     }
 
 
@@ -79,5 +95,4 @@ public class LinkedList<T> {
             this.data = data;
         }
     }
-
 }

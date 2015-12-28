@@ -1,4 +1,4 @@
-package adt.lists;
+package adt.collections;
 
 /**
  * Created by Jógvan 23/12-2015 13:46.

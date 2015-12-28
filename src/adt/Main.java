@@ -1,9 +1,6 @@
 package adt;
 
-import adt.lists.HashMap;
-import adt.lists.HashSet;
-
-import java.util.Arrays;
+import adt.collections.HashMap;
 
 /**
  * Created by Jógvan 20/12-2015 15:53.
@@ -79,5 +76,6 @@ public class Main {
         test.put("A35","cd");
         test.put("A311","ce");
         System.out.println(test.get("A35"));
+
     }
 }
