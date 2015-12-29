@@ -11,6 +11,6 @@ import org.junit.runners.Suite;
  */
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ SimpleListTest.class, GenericListTest.class })
-public class AllTests {
-}
+@Suite.SuiteClasses({ SimpleListTest.class, GenericListTest.class,
+        OrderDBTest.class, MySQLModelTest.class})
+public class AllTests {}

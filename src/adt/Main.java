@@ -1,6 +1,9 @@
 package adt;
 
+import adt.collections.GenericList;
 import adt.collections.HashMap;
+
+import java.util.Iterator;
 
 /**
  * Created by Jógvan 20/12-2015 15:53.
@@ -16,20 +19,22 @@ public class Main {
 //
 //        System.out.println(list);
 
-//        GenericList<String> list = new GenericList<>();
-//        list.add("Entry 1");
-//        list.add("Entry 2");
-//        list.add("Entry 3");
-//        list.add("Entry 4");
-//        list.add("Entry 5");
-//        list.add("Entry 6");
-//
-//
-//        Iterator<String> i = list.iterator();
-//        while(i.hasNext())
-//            System.out.println(i.next());
-//
-//        System.out.println(list);
+        GenericList<String> list = new GenericList<>();
+        list.add("Entry 1");
+        list.add("Entry 2");
+        list.add("Entry 3");
+        list.add("Entry 4");
+        list.add("Entry 5");
+        list.add("Entry 6");
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+
+        for (String aList : list)
+            System.out.println(aList);
+
+        System.out.println(list);
 
 
 //        LinkedStack<String> l = new LinkedStack<>();
@@ -76,6 +81,7 @@ public class Main {
         test.put("A35","cd");
         test.put("A311","ce");
         System.out.println(test.get("A35"));
+
 
     }
 }

@@ -76,17 +76,6 @@ public class HashMap<K, V> implements Collection<V>, Iterable<HashMap.Entry<K, V
         return false;
     }
 
-//    public boolean contains(K o) {
-//        int hash = hash(o);
-//        int pos = hash%this.map.length;
-//        if(this.map[pos]==null)
-//            return false;
-//        else
-//            for (int i = 0; i < this.map[pos].size(); i++)
-//                if(this.map[pos].get(i).hash == hash)
-//                    return true;
-//        return false;
-//    }
 
     /**
      *

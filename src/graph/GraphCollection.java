@@ -23,11 +23,6 @@ public class GraphCollection {
         vertices.put(v, new HashMap<>());
     }
 
-    public void addUndirectedEdge(Vertex v1, Vertex v2, int weight){
-        addEdge(v1, v2, weight);
-        addEdge(v2, v1, weight);
-    }
-
     public void addEdge(Vertex v1, Vertex v2, int weight){
         vertices.get(v1).put(v2, weight);
     }

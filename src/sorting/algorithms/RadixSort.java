@@ -13,7 +13,6 @@ public class RadixSort implements SortInterface {
     public RadixSort(int[] data) {
         this.data = data;
 
-        // TODO: find a better way to get highest number.
         for (int i : data) highest = highest <i ? i : highest;
     }
 
