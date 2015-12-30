@@ -1,6 +1,6 @@
 package adt.collections;
 
-import adt.collections.interfaces.StackInterface;
+import adt.collections.interfaces.Stack;
 import adt.collections.iterators.NegativeListIterator;
 import exceptions.StackOutOfBoundsException;
 
@@ -9,7 +9,7 @@ import java.util.Iterator;
 /**
  * Created by Jógvan 29/12-2015 16:25.
  */
-public class Stack<T> implements StackInterface<T> {
+public class SimpleStack<T> implements Stack<T> {
 
     private T[] stack = (T[]) new Object[5];
     private int size = 0;

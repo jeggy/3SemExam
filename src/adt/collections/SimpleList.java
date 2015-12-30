@@ -1,19 +1,19 @@
 package adt.collections;
 
-import adt.collections.interfaces.ListInterface;
+import adt.collections.interfaces.List;
 
 import java.util.Arrays;
 
 /**
  * Created by Jógvan 20/12-2015 16:09.
  */
-public class List<T> implements ListInterface<T> {
+public class SimpleList<T> implements List<T> {
 
     private T[] list;
 
     private int size;
 
-    public List(int size) {
+    public SimpleList(int size) {
         this.size = 0;
         this.list = (T[]) new Object[size];
     }
@@ -21,7 +21,7 @@ public class List<T> implements ListInterface<T> {
     @Override
     public void add(T o) {
         if(this.list.length<this.size)
-            throw new IndexOutOfBoundsException("Array is full, you'll need to remove a element or create a new List!");
+            throw new IndexOutOfBoundsException("Array is full, you'll need to remove a element or create a new SimpleList!");
 
         this.list[this.size++] = o;
     }
@@ -50,7 +50,7 @@ public class List<T> implements ListInterface<T> {
 
     @Override
     public String toString() {
-        return "List{" +
+        return "SimpleList{" +
                 "list=" + Arrays.toString(list) +
                 '}';
     }

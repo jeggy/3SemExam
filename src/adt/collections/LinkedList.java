@@ -1,11 +1,11 @@
 package adt.collections;
 
-import adt.collections.interfaces.ListInterface;
+import adt.collections.interfaces.List;
 
 /**
  * Created by Jógvan 23/12-2015 15:52.
  */
-public class LinkedList<T> implements ListInterface<T> {
+public class LinkedList<T> implements List<T> {
 
     private Node<T> head;
     private Node<T> tail;

@@ -5,10 +5,9 @@ package generics.extend;
  */
 public class Main {
 
-    static ThingInterface[] things = {new Volvo("This is a car"),
+    static Vehicle[] things = {
+            new Volvo("This is a car"),
             new Tractor("This is a car"),
-            new Chair(4),
-            new Triangle()
     };
 
 

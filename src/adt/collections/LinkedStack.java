@@ -1,13 +1,13 @@
 package adt.collections;
 
-import adt.collections.interfaces.StackInterface;
+import adt.collections.interfaces.Stack;
 
 import java.util.Iterator;
 
 /**
  * Created by Jógvan 23/12-2015 13:46.
  */
-public class LinkedStack<T> implements StackInterface<T> {
+public class LinkedStack<T> implements Stack<T> {
 
     private Node<T> head;
     private int size = 0;

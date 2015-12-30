@@ -1,6 +1,6 @@
 package adt.collections;
 
-import adt.collections.interfaces.QueueInterface;
+import adt.collections.interfaces.Queue;
 import adt.collections.iterators.LinkedQueueIterator;
 import exceptions.QueueEmptyException;
 
@@ -9,7 +9,7 @@ import java.util.Iterator;
 /**
  * Created by Jógvan 30/12-2015 17:27.
  */
-public class LinkedQueue<T> implements QueueInterface<T> {
+public class LinkedQueue<T> implements Queue<T> {
 
     private Node<T> head;
     private Node<T> tail;

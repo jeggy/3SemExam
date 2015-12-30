@@ -1,6 +1,6 @@
 package unittests;
 
-import adt.collections.List;
+import adt.collections.SimpleList;
 import org.junit.*;
 
 import static org.junit.Assert.assertSame;
@@ -13,7 +13,7 @@ public class ListTest {
 
     @Test
     public void getShouldReturnSameAsAddedValueTest() {
-        List<String> tester = new List<>(3);
+        SimpleList<String> tester = new SimpleList<>(3);
 
         String s1 = "Hello World";
         String s2 = "What?";
@@ -29,9 +29,9 @@ public class ListTest {
 
     @Test
     public void getShouldReturnSameAsAddedValueAdvancedTest() {
-        List<List<?>> outerList = new List<>(2);
+        SimpleList<SimpleList<?>> outerList = new SimpleList<>(2);
 
-        List<String> innerList1 = new List<>(3);
+        SimpleList<String> innerList1 = new SimpleList<>(3);
         String s1 = "Hello World";
         String s2 = "What?";
         String s3 = "HelloOh yeah";
@@ -39,7 +39,7 @@ public class ListTest {
         innerList1.add(s2);
         innerList1.add(s3);
 
-        List<PojoExample> innerList2 = new List<>(3);
+        SimpleList<PojoExample> innerList2 = new SimpleList<>(3);
         PojoExample pojo1 = new PojoExample("name", 50);
         PojoExample pojo2 = new PojoExample("Other name", 100);
         innerList2.add(pojo1);
@@ -63,7 +63,7 @@ public class ListTest {
 
     @Test (expected = ArrayIndexOutOfBoundsException.class)
     public void arrayOutOfBoundsAdd(){
-        List<String> list = new List<>(2);
+        SimpleList<String> list = new SimpleList<>(2);
         list.add("A");
         list.add("B");
         list.add("C");
@@ -71,7 +71,7 @@ public class ListTest {
 
     @Test (expected = ArrayIndexOutOfBoundsException.class)
     public void arrayOutOfBoundsGet(){
-        List<String> list = new List<>(2);
+        SimpleList<String> list = new SimpleList<>(2);
         list.get(3);
     }
 
