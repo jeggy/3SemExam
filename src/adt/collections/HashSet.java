@@ -1,9 +1,11 @@
 package adt.collections;
 
+import adt.collections.interfaces.Collection;
+
 /**
  * Created by Jógvan 23/12-2015 15:11.
  */
-public class HashSet<T> implements Collection<T>{
+public class HashSet<T> implements Collection<T> {
     private LinkedList<T>[] set = new LinkedList[101];
     private int size = 0;
 

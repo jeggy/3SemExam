@@ -1,8 +1,8 @@
 package adt;
 
-import adt.collections.*;
+import adt.collections.HashMap;
+import adt.collections.interfaces.Map;
 
-import java.util.Iterator;
 
 /**
  * Created by Jógvan 20/12-2015 15:53.
@@ -10,7 +10,7 @@ import java.util.Iterator;
 public class Main {
 
     public static void main(String[] args) {
-//        SimpleList<String> list = new SimpleList<>(10);
+//        List<String> list = new List<>(10);
 //
 //        list.add("Entry 1");
 //        list.add("Entry 2");
@@ -62,36 +62,46 @@ public class Main {
 //        ll.add("Hello3");
 //        System.out.println(ll.get(0));
 //
-//        HashMap<String, String> test = new HashMap<>();
-//        test.put("","");
-//        test.put("1","a");
-//        test.put("2","b");
-//        test.put("3","c");
-//        test.put("33","c");
-//        test.put("34","bc");
-//        test.put("35","cd");
-//        test.put("311","ce");
-//        test.put("A","");
-//        test.put("A1","a");
-//        test.put("AA2","b");
-//        test.put("A3","c");
-//        test.put("A33","c");
-//        test.put("A34","bc");
-//        test.put("A35","cd");
-//        test.put("A311","ce");
-//        System.out.println(test.get("A35"));
-
-
-        StackInterface<String> stack = new LinkedStack<>();
-
-        for (int i = 0; i < 20; i++) {
-            stack.push("Content"+i);
-        }
-
-        for (int i = 0; i < 20; i++) {
-            System.out.println(stack.pop());
-        }
-
-
+        Map<String, String> test = new HashMap<>();
+        test.put("","");
+        test.put("1","a");
+        test.put("2","b");
+        test.put("3","c");
+        test.put("33","c");
+        test.put("34","bc");
+        test.put("35","cd");
+        test.put("311","ce");
+        test.put("A","");
+        test.put("A1","a");
+        test.put("AA2","b");
+        test.put("A3","c");
+        test.put("A33","c");
+        test.put("A34","bc");
+        test.put("A35","cd");
+        test.put("A311","ce");
+        System.out.println(test.get("A35"));
+//
+//
+//        StackInterface<String> stack = new Stack<>();
+//
+//        for (int i = 0; i < 20; i++) {
+//            stack.push("Content"+i);
+//        }
+//
+//        for (String s : stack) {
+//            System.out.println(s);
+//        }
+//
+//
+//
+//        LinkedQueue<String> lq = new LinkedQueue<>();
+//        lq.add("Test1");
+//        lq.add("Test2");
+//        lq.add("Test3");
+//
+//
+//        for (String s : lq) {
+//            System.out.println(s);
+//        }
     }
 }

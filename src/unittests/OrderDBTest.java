@@ -1,8 +1,8 @@
 package unittests;
 
-import db.orderDB.Order;
-import db.orderDB.OrderDB;
-import db.orderDB.OrderModel;
+import db.Order;
+import db.OrderDB;
+import db.OrderModel;
 import exceptions.OrderDBException;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +10,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

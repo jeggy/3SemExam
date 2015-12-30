@@ -1,4 +1,4 @@
-package db.orderDB;
+package db;
 
 /**
  * Created by Jógvan 29/12-2015 02:01.

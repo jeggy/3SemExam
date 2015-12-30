@@ -1,7 +1,7 @@
 package unittests;
 
 import adt.collections.GenericList;
-import adt.collections.SimpleList;
+import adt.collections.List;
 import org.junit.Test;
 
 import static org.junit.Assert.assertSame;
@@ -29,9 +29,9 @@ public class GenericListTest {
 
     @Test
     public void getShouldReturnSameAsAddedValueAdvancedTest() {
-        GenericList<SimpleList<?>> outerList = new GenericList<>();
+        GenericList<List<?>> outerList = new GenericList<>();
 
-        SimpleList<String> innerList1 = new SimpleList<>(3);
+        List<String> innerList1 = new List<>(3);
         String s1 = "Hello World";
         String s2 = "What?";
         String s3 = "HelloOh yeah";
@@ -39,7 +39,7 @@ public class GenericListTest {
         innerList1.add(s2);
         innerList1.add(s3);
 
-        SimpleList<PojoExample> innerList2 = new SimpleList<>(3);
+        List<PojoExample> innerList2 = new List<>(3);
         PojoExample pojo1 = new PojoExample("name", 50);
         PojoExample pojo2 = new PojoExample("Other name", 100);
         innerList2.add(pojo1);

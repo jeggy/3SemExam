@@ -1,5 +1,7 @@
 package adt.collections;
 
+import adt.collections.interfaces.StackInterface;
+import adt.collections.iterators.NegativeListIterator;
 import exceptions.StackOutOfBoundsException;
 
 import java.util.Iterator;
@@ -7,16 +9,18 @@ import java.util.Iterator;
 /**
  * Created by Jógvan 29/12-2015 16:25.
  */
-public class Stack<T> implements StackInterface<T>, Iterable<T>{
+public class Stack<T> implements StackInterface<T> {
 
     private T[] stack = (T[]) new Object[5];
     private int size = 0;
 
+    @Override
     public void push(T obj) {
         if(this.size>=this.stack.length){grow();}
         this.stack[this.size++] = obj;
     }
 
+    @Override
     public T pop() {
         if(this.size>0){
             return this.stack[--this.size];
@@ -36,7 +40,9 @@ public class Stack<T> implements StackInterface<T>, Iterable<T>{
 
     @Override
     public boolean contains(T o) {
-        // TODO: Implement this!
+        for (T t : stack)
+            if(t.equals(o))
+                return true;
         return false;
     }
 
@@ -48,17 +54,6 @@ public class Stack<T> implements StackInterface<T>, Iterable<T>{
 
     @Override
     public Iterator<T> iterator() {
-        // TODO: implement this!
-        return new Iterator<T>() {
-            @Override
-            public boolean hasNext() {
-                return false;
-            }
-
-            @Override
-            public T next() {
-                return null;
-            }
-        };
+        return new NegativeListIterator<>(stack, this.size);
     }
 }

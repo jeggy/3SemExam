@@ -1,4 +1,4 @@
-package adt.collections;
+package adt.collections.interfaces;
 
 /**
  * Created by Jógvan 20/12-2015 16:10.

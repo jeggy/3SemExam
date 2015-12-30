@@ -1,10 +1,9 @@
-package db.orderDB;
+package db;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 /**
  * Created by Jógvan 29/12-2015 02:07.

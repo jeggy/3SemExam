@@ -1,11 +1,14 @@
 package adt.collections;
 
+import adt.collections.interfaces.Collection;
+import adt.collections.interfaces.Map;
+
 import java.util.Iterator;
 
 /**
  * Created by Jógvan 24/12-2015 13:20.
  */
-public class HashMap<K, V> implements Collection<V>, Iterable<HashMap.Entry<K, V>>{
+public class HashMap<K, V> implements Collection<V>, Map<K,V>, Iterable<HashMap.Entry<K, V>>{
 
     private LinkedList<Entry<K,V>>[] map = new LinkedList[101];
     private int size = 0;
@@ -15,6 +18,7 @@ public class HashMap<K, V> implements Collection<V>, Iterable<HashMap.Entry<K, V
      * @param key
      * @param value
      */
+    @Override
     public void put(K key, V value){
         int hash = hash(key);
         int pos = hash%this.map.length;
@@ -39,7 +43,8 @@ public class HashMap<K, V> implements Collection<V>, Iterable<HashMap.Entry<K, V
      *
      * @param key
      * @return
-     */
+    */
+    @Override
     public V get(K key){
         int hash = hash(key);
         int pos = hash%this.map.length;

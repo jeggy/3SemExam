@@ -1,5 +1,7 @@
 package adt.collections;
 
+import adt.collections.interfaces.ListInterface;
+
 /**
  * Created by Jógvan 23/12-2015 15:52.
  */

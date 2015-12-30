@@ -1,5 +1,6 @@
 package adt.collections;
 
+import adt.collections.interfaces.ListInterface;
 import adt.collections.iterators.ListIterator;
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package db.orderDB;
+package db;
 
 import exceptions.OrderDBException;
 
