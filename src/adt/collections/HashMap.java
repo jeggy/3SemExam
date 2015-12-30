@@ -127,7 +127,7 @@ public class HashMap<K, V> implements Collection<V>, Iterable<HashMap.Entry<K, V
         }
     }
 
-    /* --------------------- Entry ------------------------ */
+    /* --------------------- Entry Iterator ------------------------ */
     private class EntryIterator<K, V> implements java.util.Iterator<Entry> {
 
         private Entry<K, V>[] entries;

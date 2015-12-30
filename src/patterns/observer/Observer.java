@@ -1,10 +1,12 @@
 package patterns.observer;
 
-/**
- * Created by Jógvan 22/12-2015 14:33.
- */
-public interface Observer {
+import java.util.ArrayList;
 
-    void update();
+/**
+ * Created by Jógvan 30/12-2015 13:36.
+ */
+public class Observer extends Observable {
+
+
 
 }

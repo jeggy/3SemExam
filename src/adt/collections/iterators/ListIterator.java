@@ -1,4 +1,4 @@
-package adt.collections;
+package adt.collections.iterators;
 
 import java.util.Iterator;
 

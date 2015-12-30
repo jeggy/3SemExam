@@ -14,6 +14,11 @@ public class MainProgram extends Application{
         launch(args);
     }
 
+    /**
+     *
+     *
+     */
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Scene s = new Scene(FXMLLoader.load(getClass().getResource("Window.fxml")));

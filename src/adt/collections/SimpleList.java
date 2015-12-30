@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Created by Jógvan 20/12-2015 16:09.
  */
-public class SimpleList<T> implements List<T> {
+public class SimpleList<T> implements ListInterface<T> {
 
     private T[] list;
 

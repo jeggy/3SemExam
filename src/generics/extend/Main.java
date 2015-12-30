@@ -11,6 +11,7 @@ public class Main {
             new Triangle()
     };
 
+
     public static void main(String[] args) {
         printAll(things);
     }

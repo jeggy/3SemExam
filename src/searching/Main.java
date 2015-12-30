@@ -3,6 +3,7 @@ package searching;
 import tools.Files;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Created by Jógvan 22/12-2015 14:55.
@@ -14,19 +15,29 @@ public class Main {
     static int c = 0;
 
     public static void main(String[] args) {
-        System.out.println("Searching for '"+wordToFind+"' via sequential search:");
-        long start = System.nanoTime();
-        System.out.println("Found: "+isWord(wordToFind, words));
-        System.out.print("Took "+(System.nanoTime()-start)+"ns");
-        System.out.println(" and used "+c+" checks.");
+        Scanner scanner = new Scanner(System.in);
+        String word = "";
+        while(!word.equalsIgnoreCase("stop!")) {
+            c = 0;
+            System.out.print("Type a word and check if it's a word: ");
+            word = scanner.next();
 
-        c = 0;
+            System.out.println("Searching for '" + word + "' via sequential search:");
+            long start = System.nanoTime();
+            System.out.println("Found: " + isWord(word, words));
+            System.out.print("Took " + (System.nanoTime() - start) + "ns");
+            System.out.println(" and used " + c + " checks.");
 
-        System.out.println("\n\nSearching for '"+wordToFind+"' via binary search:");
-        start = System.nanoTime();
-        System.out.println("Found: "+isWordBinary(wordToFind, words));
-        System.out.print("Took "+(System.nanoTime()-start)+"ns");
-        System.out.println(" and used "+c+" checks.");
+            c = 0;
+
+            System.out.println("\n\nSearching for '" + word + "' via binary search:");
+            start = System.nanoTime();
+            System.out.println("Found: " + isWordBinary(word, words));
+            System.out.print("Took " + (System.nanoTime() - start) + "ns");
+            System.out.println(" and used " + c + " checks.");
+
+            System.out.println("----------------------------------");
+        }
     }
 
     private static boolean isWord(String word, String[] words) {
@@ -62,6 +73,13 @@ public class Main {
         return false;
     }
 
+    /**
+     * Compares 2 strings and returns 0 if they are equal
+     * or -1 if 's1' has a lower ascii value than 's2' or +1 otherwise.
+     * @param s1
+     * @param s2
+     * @return the compared value (-1, 0 ,1)
+     */
     private static int compare(String s1, String s2){
         int s1l = s1.length();
         int s2l = s2.length();

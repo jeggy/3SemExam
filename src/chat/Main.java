@@ -15,7 +15,7 @@ public class Main extends Application {
      * MSG: Message
      * USJ: User Joined
      * USQ: User Exited
-     * USL: all User List
+     * USL: all User ListInterface
      * SCL: Server got closed
      * USC: User Set Command
      * UUC: User Update Command

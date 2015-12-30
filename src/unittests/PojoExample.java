@@ -1,9 +1,11 @@
 package unittests;
 
+import java.io.Serializable;
+
 /**
  * Created by Jógvan 28/12-2015 20:16.
  */
-public class PojoExample {
+public class PojoExample implements Serializable{
 
     private String name;
     private int num;

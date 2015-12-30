@@ -9,7 +9,7 @@ public class DoubleHash<K1, K2, V> {
 
     public void put(K1 k1, K2 k2, V value){
         int hash = hash(k1, k2);
-        Entry<K1, K2, V> entry = new Entry(k1, k2, value, hash);
+        Entry<K1, K2, V> entry = new Entry<>(k1, k2, value, hash);
         int pos = hash % map.length;
 
         if(map[pos]==null){

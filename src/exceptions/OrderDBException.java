@@ -1,4 +1,4 @@
-package db.orderDB.exception;
+package exceptions;
 
 import java.sql.SQLException;
 

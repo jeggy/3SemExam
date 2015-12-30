@@ -1,6 +1,6 @@
 package db.orderDB;
 
-import db.orderDB.exception.OrderDBException;
+import exceptions.OrderDBException;
 
 import java.sql.SQLException;
 

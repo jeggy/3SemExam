@@ -1,12 +1,14 @@
 package adt.collections;
 
+import adt.collections.iterators.ListIterator;
+
 import java.util.Arrays;
 import java.util.Iterator;
 
 /**
  * Created by Jógvan 21/12-2015 13:26.
  */
-public class GenericList<T> implements List<T>, Iterable<T>, Iterator<T> {
+public class GenericList<T> implements ListInterface<T>, Iterable<T>, Iterator<T> {
 
     private T[] list = (T[]) new Object[20];
     private int size = 0;

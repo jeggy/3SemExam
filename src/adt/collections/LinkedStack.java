@@ -3,7 +3,7 @@ package adt.collections;
 /**
  * Created by Jógvan 23/12-2015 13:46.
  */
-public class LinkedStack<T> {
+public class LinkedStack<T> implements StackInterface<T>{
 
     private Node<T> head;
     private int size = 0;
@@ -34,6 +34,17 @@ public class LinkedStack<T> {
             System.out.print(", "+tmp.data);
             tmp = tmp.next;
         }
+    }
+
+    @Override
+    public int size() {
+        return this.size;
+    }
+
+    @Override
+    public boolean contains(T o) {
+        // TODO: Implement this!
+        return false;
     }
 
     private static class Node<T>{

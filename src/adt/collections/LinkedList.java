@@ -3,7 +3,7 @@ package adt.collections;
 /**
  * Created by Jógvan 23/12-2015 15:52.
  */
-public class LinkedList<T> implements List<T>{
+public class LinkedList<T> implements ListInterface<T> {
 
     private Node<T> head;
     private Node<T> tail;

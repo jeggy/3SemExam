@@ -60,9 +60,12 @@ public class SynchronizeProblem implements Runnable {
         workCounter();
     }
 
+    private static Object lock = new Object();
     private void workCounter() {
         for (int i = 1; i <= 100000; i++) {
-            counter++;
+            synchronized (lock) {
+                counter++;
+            }
         }
 
         System.out.println(Thread.currentThread().getName() + " is done. Overall executed times: " + counter);
