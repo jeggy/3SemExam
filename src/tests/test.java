@@ -8,7 +8,7 @@ import java.net.Socket;
 public class test {
 
     public static void main(String[] args) {
-        Socket s = new Socket(Socket.);
+
     }
 
 }

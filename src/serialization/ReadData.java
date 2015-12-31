@@ -1,21 +1,15 @@
 package serialization;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InvalidClassException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
+import adt.collections.GenericList;
+
+import java.io.*;
 
 /**
  * Created by Jógvan.
  */
 public class ReadData<T> {
 
-    ArrayList<T> objects = new ArrayList<>();
+    GenericList<T> objects = new GenericList<>();
     String fileLocation;
 
     public ReadData(String file) {
@@ -28,7 +22,8 @@ public class ReadData<T> {
         save();
     }
 
-    public ArrayList<T> getObjects() {
+    public GenericList<T> getObjects() {
+        load();
         return objects;
     }
 
@@ -40,19 +35,23 @@ public class ReadData<T> {
 
             try {
                 // gemmer alle objecter fra filen i objects arraylisten
-                this.objects = (ArrayList<T>) in.readObject();
+                this.objects = (GenericList<T>) in.readObject();
                 return true;
-            } catch (InvalidClassException e) {
+            }catch (InvalidClassException e) {
                 System.out.println("Der er kommet en fejl i læsning af objecterne. Du har sikkert ændret i klassen: " + e);
             } catch (ClassNotFoundException ex) {
                 ex.printStackTrace();
             }
 
-        } catch (FileNotFoundException i) {
+        } catch (FileNotFoundException e) {
             System.out.println("Filen eksisterer ikke endnu. Den bliver autogeneret nu.");
             createFile();
-        } catch (IOException c) {
-            System.out.println("Der er kommet en fejl i læsning af objecterne. \n Enten er .dat filen tøm eller har du ændret noget i klassen | error: " + c);
+        }catch(NotSerializableException e){
+            System.out.println("Objekterne må implemtere interfacet Serializable");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Der er kommet en fejl i læsning af objecterne. \n Enten er .dat filen tøm eller har du ændret noget i klassen");
+            e.printStackTrace();
         }
 
         return false;
@@ -69,16 +68,15 @@ public class ReadData<T> {
             out = new ObjectOutputStream(fileOut); //opret en objekt stream til den output stream der går til filen
 
             out.writeObject(objects); //skriv arraylisten til fil - husk at Vare skal være Serializable
-        } catch (IOException i) {
+
+
+            out.close(); //luk stream
+            fileOut.close(); //luk filen
+        }catch(NotSerializableException e){
+            System.out.println("Objekterne må implemtere interfacet Serializable");
+            e.printStackTrace();
+        }catch (IOException i) {
             i.printStackTrace();
-            return false; //noget gik galt - return false;
-        } finally {
-            try {
-                out.close(); //luk stream
-                fileOut.close(); //luk filen
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         return true;
     }
