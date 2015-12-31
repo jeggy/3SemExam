@@ -14,7 +14,6 @@ public class DoubleHash<K1, K2, V> {
 
         if(map[pos]==null){
             map[pos] = entry;
-            return;
         }else{
             Entry tmp = map[pos];
             while(tmp!=null){

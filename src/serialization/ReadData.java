@@ -9,18 +9,16 @@ import java.io.InvalidClassException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- * Created by Jógvan 30/12-2015 16:14.
+ * Created by Jógvan.
  */
-public class Read<T> {
+public class ReadData<T> {
 
     ArrayList<T> objects = new ArrayList<>();
     String fileLocation;
 
-    public Read(String file) {
+    public ReadData(String file) {
         this.fileLocation = file;
         load();
     }
@@ -47,7 +45,7 @@ public class Read<T> {
             } catch (InvalidClassException e) {
                 System.out.println("Der er kommet en fejl i læsning af objecterne. Du har sikkert ændret i klassen: " + e);
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Read.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
             }
 
         } catch (FileNotFoundException i) {
@@ -91,9 +89,8 @@ public class Read<T> {
             file.createNewFile();
             System.out.println("Ny fil oprettet på dit system! \""+file.getCanonicalPath()+"\"");
         } catch (IOException ex) {
-            Logger.getLogger(Read.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
-
     }
 
 
