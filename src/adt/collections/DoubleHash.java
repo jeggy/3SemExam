@@ -1,11 +1,14 @@
 package adt.collections;
 
+import adt.collections.interfaces.Collection;
+
 /**
  * Created by Jógvan on 27/11-2015 09:43.
  */
-public class DoubleHash<K1, K2, V> {
+public class DoubleHash<K1, K2, V> implements Collection<V>{
 
     Entry<K1, K2, V>[] map = new Entry[101];
+    private int size = 0;
 
     public void put(K1 k1, K2 k2, V value){
         int hash = hash(k1, k2);
@@ -18,7 +21,7 @@ public class DoubleHash<K1, K2, V> {
             Entry tmp = map[pos];
             while(tmp!=null){
                 if(tmp.keyHash==entry.keyHash){
-                    tmp.obj = entry.obj;
+                    tmp.value = entry.value;
                     return;
                 }
                 tmp = tmp.next;
@@ -27,6 +30,7 @@ public class DoubleHash<K1, K2, V> {
             entry.next = map[pos];
             map[pos] = entry;
         }
+        this.size++;
     }
 
     public V get(K1 key1, K2 key2){
@@ -35,10 +39,23 @@ public class DoubleHash<K1, K2, V> {
 
         while(tmp!=null){
             if(tmp.keyHash==keyHash)
-                return tmp.obj;
+                return tmp.value;
             tmp = tmp.next;
         }
         return null;
+    }
+
+    @Override
+    public int size() {
+        return this.size;
+    }
+
+    @Override
+    public boolean contains(V o) {
+        for (Entry<K1, K2, V> entry : map)
+            if(entry!=null&&entry.value.equals(o))
+                return true;
+        return false;
     }
 
     private static int hash(Object v1, Object v2){
@@ -47,22 +64,17 @@ public class DoubleHash<K1, K2, V> {
     }
 
 
-
-
-
-
-
     /******************** Entry *******************/
 
     private static class Entry<K1, K2, V>{
         K1 k1;
         K2 k2;
-        V obj;
+        V value;
         int keyHash;
         Entry<K1, K2, V> next;
 
         Entry(K1 k1, K2 k2, V obj, int hash) {
-            this.obj = obj;
+            this.value = obj;
             this.k1 = k1;
             this.k2 = k2;
             this.keyHash = hash;
