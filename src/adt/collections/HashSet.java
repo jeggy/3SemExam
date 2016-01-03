@@ -1,14 +1,15 @@
 package adt.collections;
 
-import adt.collections.interfaces.Collection;
+import adt.collections.interfaces.Set;
 
 /**
  * Created by Jógvan 23/12-2015 15:11.
  */
-public class HashSet<T> implements Collection<T> {
+public class HashSet<T> implements Set<T> {
     private LinkedList<T>[] set = new LinkedList[101];
     private int size = 0;
 
+    @Override
     public void add(T o){
         int pos = hash(o)%this.set.length;
         if(this.set[pos]==null){
