@@ -40,7 +40,7 @@ public class Main {
     }
 
     private static void printString(String string){
-        if(string.length()>0){
+        if(string.length()>0){ // Basecase
             printString(string.substring(1));
             System.out.print(string.charAt(0));
         }

@@ -92,7 +92,7 @@ public class Main {
                 return -1;
             }
         }
-        return s1l==s2l ? 0 : -1;
+        return s1l == s2l ? 0 : -1;
     }
 
 
